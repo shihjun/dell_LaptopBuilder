@@ -250,6 +250,7 @@ public class LaptopBuilder {
           System.out.println("1. Add coupon code\n2. Checkout\n3. Remove item\n4. Back");
           Scanner checkoutInput = new Scanner(System.in);
           Integer checkoutOption = Integer.parseInt(checkoutInput.nextLine());
+          // coupon code
           if (checkoutOption == 1) {
             if (couponCode == "-") {
               System.out.println("Enter the coupon code:");
@@ -267,9 +268,11 @@ public class LaptopBuilder {
               totalPrice = subTotal;
               System.out.println("Coupon code (" + couponCode + ") already added.");
             }
+            // checkout
           } else if (checkoutOption == 2) {
             checkout = !checkout;
             System.out.println("Thank you for shopping with Dell.");
+            // remove item
           } else if (checkoutOption == 3) {
             System.out.println("Enter the remove item:");
             Scanner removeItemInput = new Scanner(System.in);
@@ -278,6 +281,7 @@ public class LaptopBuilder {
             cart.remove(removeItemIndex - 1);
             subtotalPriceList.remove(removeItemIndex - 1);
             System.out.println("Item: " + removeItemIndex + " removed from cart.");
+            // back to homepage
           } else if (checkoutOption == 4) {
             totalPrice = subTotal;
             shoppingCart = !shoppingCart;
